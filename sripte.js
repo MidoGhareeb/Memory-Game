@@ -63,8 +63,8 @@ function ifMatched(firstBlock , secondBlock){
         secondBlock.classList.remove("rotate");
         firstBlock.classList.add("match");
         secondBlock.classList.add("match");        
-        document.getElementById("success").play();
         triesTotal.innerHTML=parseInt(triesTotal.innerHTML)+1;
+        document.getElementById("success").play();
     }else{
         tries.innerHTML=parseInt(tries.innerHTML)+1;
         triesTotal.innerHTML=parseInt(triesTotal.innerHTML)+1;
@@ -86,5 +86,18 @@ function shuffle (array){
         temp =array[current]
         array[current]=array[random]
         array[random]=temp
+    }
+}
+//music
+let count=0;
+function playMusic(){
+    if(count == 0){
+        count=1;
+        back.pause()
+        document.querySelector(".music .no").classList.toggle("yes")
+    }else{
+        count=0;
+        back.play()
+        document.querySelector(".music .no").classList.toggle("yes")
     }
 }

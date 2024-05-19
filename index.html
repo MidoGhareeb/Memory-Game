@@ -14,16 +14,21 @@
     <div class="start-control">
         <span>Start Game</span>
     </div>
+    <!-- music -->
+    <div class="music" onclick="playMusic()">
+        <i class="fa-solid fa-music"></i>
+        <span class="no"></span>
+    </div>
     <!-- information of the game -->
     <div class="info-container">
         <div class="name">
             Hello : <span></span>
         </div>
         <div class="tries">
-            Wrong Tries : <span>0</span>
+            Misses : <span>0</span>
         </div>
         <div class="Totaltries">
-            Tries : <span>0</span>
+            Moves : <span>0</span>
         </div>
     </div>
     <!-- game's Cards -->
@@ -167,12 +172,18 @@
             </div>
         </div>
     </div>
-    <audio id="back" src="audio/back.mp3" preload="auto" loop></audio>
+    <audio id="back" src="audio/back.mp3" preload="auto" loop ></audio>
     <audio id="wrong" src="audio/wrong.mp3" preload="auto"></audio>
     <audio id="success" src="audio/sucsses.mp3" preload="auto"></audio>
+    <!-- <div class="congratulation" id="cong">
+        <h1>Congratulation</h1>
+        <p>You got <span>7</span> on <span>13</span> moves!</p>
+        <p>Your Accuracy is <span>100%</span></p>
+    </div> -->
 
 
 
     <script src="sripte.js"></script>
+    <script src="https://kit.fontawesome.com/fac430cb52.js" crossorigin="anonymous"></script>
 </body>
 </html>
