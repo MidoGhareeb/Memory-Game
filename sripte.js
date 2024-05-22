@@ -6,12 +6,15 @@ let namePlayer=document.querySelector(".info-container .name span");
 start.onclick=function () {
     //prompet for ask the user's Name
     let yourName =prompt("Whats Your Name?");
+    let nameWinner =document.getElementById("namee")
     //if the name is empty and make it unknown
     if(yourName == null || yourName ==""){
         namePlayer.innerHTML="Unknown"
+        nameWinner.innerHTML="Unknown";
         //if not empty and make it your name
     }else{
         namePlayer.innerHTML=yourName;
+        nameWinner.innerHTML=yourName;
     };
     //remove splash screen
     splashScreen.remove();
@@ -58,13 +61,17 @@ function noclicking(){
 function ifMatched(firstBlock , secondBlock){
     let tries =document.querySelector(".tries span");
     let triesTotal =document.querySelector(".Totaltries span");
+    let score =document.querySelector(".score span");
     if(firstBlock.dataset.sponge === secondBlock.dataset.sponge){
         firstBlock.classList.remove("rotate");
         secondBlock.classList.remove("rotate");
         firstBlock.classList.add("match");
         secondBlock.classList.add("match");        
         triesTotal.innerHTML=parseInt(triesTotal.innerHTML)+1;
+        score.innerHTML=parseInt(score.innerHTML)+1;
         document.getElementById("success").play();
+        
+        
     }else{
         tries.innerHTML=parseInt(tries.innerHTML)+1;
         triesTotal.innerHTML=parseInt(triesTotal.innerHTML)+1;
@@ -73,6 +80,16 @@ function ifMatched(firstBlock , secondBlock){
             secondBlock.classList.remove("rotate")
         },duration)
         document.getElementById("wrong").play();
+    }
+    if(score.innerHTML == 10){
+        let cong =document.getElementById("cong")
+        let mov =document.getElementById("mov-score")
+        let mis =document.getElementById("mis-score")
+        cong.style.opacity="1"
+        cong.style.top="50%"
+        mis.innerHTML=parseInt(tries.innerHTML)
+        mov.innerHTML=parseInt(triesTotal.innerHTML)
+        
     }
 } 
 //shufffle function
@@ -100,4 +117,19 @@ function playMusic(){
         back.play()
         document.querySelector(".music .no").classList.toggle("yes")
     }
+}
+function Reload (){
+    location.reload()
+}
+function exit(){
+    window.close()
+}
+let closeWindow=document.getElementById("closer")
+function showCloseWindow(){
+    closeWindow.style.left="50%"
+    closeWindow.style.opacity="1"
+}
+function again(){
+    closeWindow.style.left="-400%"
+    closeWindow.style.opacity="0"
 }

@@ -19,6 +19,14 @@
         <i class="fa-solid fa-music"></i>
         <span class="no"></span>
     </div>
+    <!-- Reload -->
+    <div class="reload" onclick="Reload()">
+        <i class="fa-solid fa-rotate"></i>
+    </div>
+    <!-- close -->
+    <div class="close" onclick="showCloseWindow()">
+        <i class="fa-solid fa-x"></i>
+    </div>
     <!-- information of the game -->
     <div class="info-container">
         <div class="name">
@@ -26,6 +34,9 @@
         </div>
         <div class="tries">
             Misses : <span>0</span>
+        </div>
+        <div class="score">
+            scores : <span>0</span>
         </div>
         <div class="Totaltries">
             Moves : <span>0</span>
@@ -175,14 +186,20 @@
     <audio id="back" src="audio/back.mp3" preload="auto" loop ></audio>
     <audio id="wrong" src="audio/wrong.mp3" preload="auto"></audio>
     <audio id="success" src="audio/sucsses.mp3" preload="auto"></audio>
-    <!-- <div class="congratulation" id="cong">
-        <h1>Congratulation</h1>
-        <p>You got <span>7</span> on <span>13</span> moves!</p>
-        <p>Your Accuracy is <span>100%</span></p>
-    </div> -->
-
-
-
+    <div class="congratulation" id="cong">
+        <h1>Congratulation !</h1>
+        <h2 >Well Done <span id="namee">Mohamed</span></h2>
+        <p>You got <span id="mis-score">7</span> misses on <span id="mov-score">13</span> moves!</p>
+        <button onclick="Reload()" id="btnagain">Play Again</button>
+    </div>
+    <div class="closer" id="closer">
+        <h1>Are you sure?</h1>
+        <div class="closerBtn">
+            <button onclick="exit()"  id="btnYes">Yes</button>
+            <button onclick="again()"  id="btnNo">No</button>
+        </div>
+        
+    </div>
     <script src="sripte.js"></script>
     <script src="https://kit.fontawesome.com/fac430cb52.js" crossorigin="anonymous"></script>
 </body>
