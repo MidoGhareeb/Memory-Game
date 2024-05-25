@@ -106,7 +106,7 @@ body{
     position: absolute;
     top:-400%;
     left: 50%;
-    z-index: 3;
+    z-index: 50;
     transform: translate(-50% , -50%);
     background-color: #aead0d;
     width:600px;
@@ -294,6 +294,7 @@ body{
 .game-container .game-card.rotate,
 .game-container .game-card.match{
     transform: rotateY(180deg);
+    pointer-events: none;
 }
 @media screen and (max-width:450px) {
     .start-control span{
@@ -389,6 +390,7 @@ body{
         border: transparent 1px solid;
         transition: all 0.5s ease;
         cursor: pointer;
+        z-index: 50;
     }
     .closer{
         top:50%;

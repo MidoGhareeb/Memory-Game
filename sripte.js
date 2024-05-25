@@ -67,6 +67,7 @@ function ifMatched(firstBlock , secondBlock){
         secondBlock.classList.remove("rotate");
         firstBlock.classList.add("match");
         secondBlock.classList.add("match");        
+            
         triesTotal.innerHTML=parseInt(triesTotal.innerHTML)+1;
         score.innerHTML=parseInt(score.innerHTML)+1;
         document.getElementById("success").play();
